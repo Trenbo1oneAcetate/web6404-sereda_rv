@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookVerse - Лабораторная работа №5</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Хедер с навигацией -->
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-book-open"></i>
+                <h1>Book<span>Verse</span></h1>
+            </div>
+            <nav class="nav">
+                <a href="#home" class="nav-link active"><i class="fas fa-home"></i> Главная</a>
+                <a href="#form" class="nav-link"><i class="fas fa-edit"></i> Регистрация</a>
+                <a href="#books" class="nav-link"><i class="fas fa-book"></i> Книги</a>
+                <a href="#about" class="nav-link"><i class="fas fa-info-circle"></i> О нас</a>
+            </nav>
+            <div class="theme-toggle">
+                <button id="themeBtn">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <!-- Приветственная секция -->
+            <section id="home" class="hero-section">
+                <div class="hero-content">
+                    <h2 class="hero-title">Добро пожаловать в мир <span class="highlight">BookVerse</span></h2>
+                    <p class="hero-subtitle">Исследуйте нашу коллекцию книг и станьте частью сообщества читателей</p>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <i class="fas fa-book"></i>
+                            <span class="stat-number">1,234</span>
+                            <span class="stat-text">Книг в каталоге</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-users"></i>
+                            <span class="stat-number">5,678</span>
+                            <span class="stat-text">Читателей</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-star"></i>
+                            <span class="stat-number">4.8</span>
+                            <span class="stat-text">Средний рейтинг</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="book-stack">
+                        <div class="book book-1"></div>
+                        <div class="book book-2"></div>
+                        <div class="book book-3"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Форма регистрации -->
+            <section id="form" class="form-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-user-plus"></i> Регистрация в BookVerse</h2>
+                    <p>Присоединяйтесь к нашему сообществу читателей</p>
+                </div>
+                
+                <form id="registrationForm" class="registration-form">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="name">
+                                <i class="fas fa-user"></i> Полное имя
+                            </label>
+                            <input type="text" id="name" name="name" placeholder="Введите ваше имя" required>
+                            <div class="hint">Минимум 2 символа, только буквы</div>
+                            <div class="error-message"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">
+                                <i class="fas fa-envelope"></i> Email
+                            </label>
+                            <input type="email" id="email" name="email" placeholder="example@mail.com" required>
+                            <div class="hint">Введите корректный email адрес</div>
+                            <div class="error-message"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">
+                                <i class="fas fa-phone"></i> Телефон
+                            </label>
+                            <input type="tel" id="phone" name="phone" placeholder="+7 (XXX) XXX-XX-XX" required>
+                            <div class="hint">Формат: +7 (XXX) XXX-XX-XX</div>
+                            <div class="error-message"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="birthdate">
+                                <i class="fas fa-birthday-cake"></i> Дата рождения
+                            </label>
+                            <input type="date" id="birthdate" name="birthdate" required>
+                            <div class="hint">Вам должно быть больше 12 лет</div>
+                            <div class="error-message"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">
+                                <i class="fas fa-lock"></i> Пароль
+                            </label>
+                            <input type="password" id="password" name="password" placeholder="Создайте пароль" required>
+                            <div class="password-strength">
+                                <div class="strength-bar"></div>
+                            </div>
+                            <div class="hint">Минимум 8 символов, цифры и буквы</div>
+                            <div class="error-message"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirmPassword">
+                                <i class="fas fa-lock"></i> Подтверждение пароля
+                            </label>
+                            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Повторите пароль" required>
+                            <div class="error-message"></div>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="preferences">
+                                <i class="fas fa-heart"></i> Предпочтения в литературе
+                            </label>
+                            <select id="preferences" name="preferences" multiple>
+                                <option value="fiction">Художественная литература</option>
+                                <option value="fantasy">Фэнтези</option>
+                                <option value="scifi">Научная фантастика</option>
+                                <option value="detective">Детективы</option>
+                                <option value="romance">Романтика</option>
+                                <option value="biography">Биографии</option>
+                                <option value="science">Научно-популярная</option>
+                                <option value="history">Историческая</option>
+                            </select>
+                            <div class="hint">Выберите один или несколько жанров (Ctrl+клик)</div>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="bio">
+                                <i class="fas fa-edit"></i> О себе
+                            </label>
+                            <textarea id="bio" name="bio" placeholder="Расскажите о своих литературных предпочтениях..." rows="3"></textarea>
+                            <div class="char-counter">Осталось символов: <span>500</span></div>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="newsletter" name="newsletter" checked>
+                                <span class="checkmark"></span>
+                                <span>Получать новости о новых поступлениях и акциях</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="terms" name="terms" required>
+                                <span class="checkmark"></span>
+                                <span>Я согласен с <a href="#" class="link">условиями использования</a></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" id="resetBtn" class="btn btn-secondary">
+                            <i class="fas fa-redo"></i> Очистить
+                        </button>
+                        <button type="submit" id="submitBtn" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i> Зарегистрироваться
+                        </button>
+                    </div>
+                </form>
+
+                <div id="formStatus" class="form-status"></div>
+            </section>
+
+            <!-- Секция с книгами (асинхронная загрузка) -->
+            <section id="books" class="books-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-book-reader"></i> Наши бестселлеры</h2>
+                    <div class="section-controls">
+                        <p>Данные обновляются каждые 5 минут</p>
+                        <button id="refreshBooks" class="btn btn-outline">
+                            <i class="fas fa-sync-alt"></i> Обновить сейчас
+                        </button>
+                    </div>
+                </div>
+
+                <div class="loading-spinner" id="loadingSpinner">
+                    <div class="spinner"></div>
+                    <p>Загрузка данных о книгах...</p>
+                </div>
+
+                <div class="books-container" id="booksContainer">
+                    <!-- Книги будут загружены через JavaScript -->
+                </div>
+
+                <div class="update-info">
+                    <i class="fas fa-clock"></i>
+                    <span>Последнее обновление: <span id="lastUpdate">--:--</span></span>
+                    <span class="update-timer" id="updateTimer">Следующее обновление через 5:00</span>
+                </div>
+            </section>
+
+            <!-- Информационная секция -->
+            <section id="about" class="about-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-info-circle"></i> О проекте BookVerse</h2>
+                </div>
+                <div class="about-content">
+                    <div class="about-card">
+                        <div class="about-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Лабораторная работа №5</h3>
+                        <p>Реализация современного CSS, обработки событий и асинхронных запросов на JavaScript</p>
+                    </div>
+                    <div class="about-card">
+                        <div class="about-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3>Выполненные требования</h3>
+                        <ul>
+                            <li>Динамическая валидация формы</li>
+                            <li>Асинхронная отправка данных</li>
+                            <li>Периодическое обновление</li>
+                            <li>Обработка ошибок</li>
+                        </ul>
+                    </div>
+                    <div class="about-card">
+                        <div class="about-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3>Уникальный дизайн</h3>
+                        <p>Современный минималистичный дизайн с авторским стилем и анимациями</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Футер -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-book-open"></i> BookVerse</h3>
+                    <p>Интернет-магазин книг с современным интерфейсом</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Лабораторная работа №5</h3>
+                    <p>Web-программирование<br>Современный CSS, JavaScript, асинхронность</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <p><i class="fas fa-envelope"></i> contact@bookverse.ru</p>
+                    <p><i class="fas fa-phone"></i> +7 (XXX) XXX-XX-XX</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 BookVerse. Все права защищены. Лабораторная работа по web-программированию.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Модальное окно успешной регистрации -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-check-circle success-icon"></i> Успешная регистрация!</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Добро пожаловать в BookVerse! Ваша регистрация успешно завершена.</p>
+                <div class="modal-details" id="modalDetails"></div>
+                <p>Информация о регистрации отправлена на сервер.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="modalOkBtn">Отлично!</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

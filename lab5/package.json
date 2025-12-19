@@ -1,0 +1,19 @@
+{
+  "name": "bookverse-lab5",
+  "version": "1.0.0",
+  "description": "Лабораторная работа №5: Интернет-магазин книг BookVerse",
+  "main": "index.html",
+  "scripts": {
+    "server": "json-server --watch db.json --port 3000",
+    "start": "concurrently \"npm run server\" \"live-server --port=8080\""
+  },
+  "dependencies": {
+    "json-server": "^0.17.0"
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.1",
+    "live-server": "^1.2.2"
+  },
+  "author": "Your Name",
+  "license": "MIT"
+}
