@@ -1,0 +1,28 @@
+{
+  "programs": [
+    {
+      "name": "Обучение с нуля",
+      "level": "Начальный",
+      "id": "f951"
+    },
+    {
+      "name": "Совершенствование техники",
+      "level": "Средний",
+      "id": "f820"
+    },
+    {
+      "name": "Индивидуальные занятия",
+      "level": "Любой",
+      "id": "f69f"
+    }
+  ],
+  "requests": [
+    {
+      "id": "dc6e",
+      "name": "gfgf",
+      "phone": "3344535",
+      "agree": true
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

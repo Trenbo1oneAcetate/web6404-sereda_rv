@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Запись</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page">
+
+<h2 class="title">Запись в школу плавания</h2>
+
+<form class="form" id="form">
+
+    <!-- Имя -->
+    <input
+        class="form__input"
+        type="text"
+        id="name"
+        placeholder="Имя"
+        required
+    >
+    <span class="form__hint" id="nameHint"></span>
+
+    <!-- Телефон -->
+    <input
+        class="form__input"
+        type="tel"
+        id="phone"
+        placeholder="Телефон"
+        required
+    >
+    <span class="form__hint" id="phoneHint"></span>
+
+    <!-- Согласие -->
+    <label class="form__label">
+        <input type="checkbox" id="agree" required>
+        Согласие на обработку данных
+    </label>
+
+    <button class="form__button" type="submit">Отправить</button>
+
+</form>
+
+<script src="js/script.js"></script>
+</body>
+</html>
